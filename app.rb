@@ -10,7 +10,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    'Bookmark Manager'
   end
 
   run! if app_file == $PROGRAM_NAME
