@@ -6,6 +6,7 @@ ruby '3.1.0'
 
 gem 'capybara'
 gem 'launchy'
+gem 'pg'
 gem 'rspec'
 gem 'rubocop'
 gem 'selenium-webdriver'
