@@ -1,10 +1,7 @@
-# frozen_string_literal: true
-
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/bookmark'
 
-# Another comment
 class BookmarkManager < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
@@ -18,6 +15,16 @@ class BookmarkManager < Sinatra::Base
     @bookmarks = Bookmark.all
   
     erb :'bookmarks/index'
+  end
+
+  get '/bookmarks/new' do
+
+    erb :'bookmarks/new'
+  end
+
+  post '/bookmarks' do
+    Bookmark.create(url: params[:url])
+    redirect '/bookmarks'
   end
 
   run! if app_file == $0
