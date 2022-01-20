@@ -15,12 +15,11 @@ describe Bookmark do
   end
   describe '.create' do
     it 'adds a bookmark' do
-      bookmark = Bookmark.create(url: "http://www.example.org", title: "Test Bookmark").first
+      bookmark = Bookmark.create(url: "http://www.example.org", title: "Test Bookmark")
 
-      expect(bookmark['url']).to eq "http://www.example.org"
-      expect(bookmark['title']).to eq 'Test Bookmark'
+      expect(bookmark.url).to eq "http://www.example.org"
+      expect(bookmark.title).to eq 'Test Bookmark'
 
-      # expect(Bookmark.all).to include 'http://www.exampe.com'
     end
   end
 end
